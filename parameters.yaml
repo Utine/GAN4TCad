@@ -1,0 +1,29 @@
+# data preprocess
+percent_samp: 1
+configure_samp: 1
+normalize: True
+
+# device
+device: mps
+
+# training
+exp: Ferro_Exp1_ResU_Basic_4
+solver: Ferro                              # Mobility2D/3D, Density2D/3D, Ferro, Current
+resnet_block_type: Basic                   # Basic, Bottle
+resnet_block_num:  4
+generator_type: ResUnet                    # Normal, Unet_interpolate, Unet_convtranspose3d, ResUnet
+n_epochs: 10
+batch_size: 32
+g_lr: 0.001
+d_lr: 0.001
+d_thresh: 0.9
+leak_value: 0.2
+soft_label: True
+lamda: 50
+
+# save
+save_step: 1
+model_pth: "./trained_models/"
+raw_pth: "./data/raw"
+pro_pth: "./data/pro/"
+result_pth: "./results/"
